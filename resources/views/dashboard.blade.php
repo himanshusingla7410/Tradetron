@@ -3,6 +3,16 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Welcome {{ Str::ucfirst(explode('@', Auth::user()->email)[0]) }}
         </h2>
+        <div class="mt-4 text-center">
+        @if (isset($quotes['error']))
+            <p> {{ $quotes['error']}} </p>
+        @else
+            <ul>
+                <li>"{{ $quotes['q']}}"</li>
+                <li><strong>-by {{$quotes['a']}} </strong></li>
+            </ul>    
+        @endif
+        </div>
         @vite(['resources/css/app.css'])
     </x-slot>
 

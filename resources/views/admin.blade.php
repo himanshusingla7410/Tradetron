@@ -110,7 +110,7 @@
 
 
 <script>
-    // Toggle dropdown visibility
+    // Toggle dropdown 
     function toggleDropdown(menuId) {
         const menu = document.getElementById(menuId);
 
@@ -121,7 +121,6 @@
             }
         });
 
-        // Toggle the current dropdown
         menu.classList.toggle('hidden');
     }
 
@@ -135,9 +134,9 @@
 
             // Show or hide the row based on the selected value
             if (value === '' || cellValue === value) {
-                row.style.display = ''; // Show the row
+                row.style.display = ''; 
             } else {
-                row.style.display = 'none'; // Hide the row
+                row.style.display = 'none'; 
             }
         });
     }
@@ -145,9 +144,9 @@
     // Get the text content of a specific column in a row
     function getCellValue(row, column) {
         const columnMap = {
-            'status_of_chat': 2, // Column index for Status
-            'issue_type': 3,     // Column index for Issue Type
-            'called_client': 4,  // Column index for Called Clients
+            'status_of_chat': 2, 
+            'issue_type': 3,     
+            'called_client': 4,  
         };
 
         const cell = row.querySelector(`td:nth-child(${columnMap[column]})`);
@@ -166,17 +165,18 @@
         }
     });
 
+    // Attaching an event listener to the agent filter dropdown
     document.addEventListener('DOMContentLoaded', () => {
-        // Attach an event listener to the agent filter dropdown
         const agentFilter = document.getElementById('agent_filter');
 
         agentFilter.addEventListener('change', (event) => {
-            const selectedAgent = event.target.value; // Get the selected agent ID
+            const selectedAgent = event.target.value; 
 
-            // Update the URL with the query string and reload the page
-            const url = new URL(window.location.href);
-            url.searchParams.set('agent', selectedAgent); // Set the selected agent in the query string
-            window.location.href = url.toString(); // Reload the page with the updated query string
+            const currentUrl = window.location.href.split('?')[0];
+            const newUrl = `${currentUrl}?agent=${selectedAgent}`;
+
+            window.history.pushState({}, " ", newUrl);
+            location.reload();
         });
     });
 </script>
