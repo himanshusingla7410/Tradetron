@@ -3,7 +3,6 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FetchQuoteController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
