@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class AgentValidatorController extends Controller
 {
     public static function isValid(Request $request){
-        
+        //dd($request->query());
         $agentID = $request->query('agent','all'); 
 
         if ($agentID == 'all'){

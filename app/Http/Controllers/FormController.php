@@ -49,7 +49,7 @@ class FormController extends Controller
 
 
     public function show(){
-
+        
         $data = QueryController::getAll([Auth::id()]);
 
         $todayCount = QueryController::getDailyCount(Auth::id(),1)[0]->count;

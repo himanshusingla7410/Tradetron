@@ -6,6 +6,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\NewsletterController;
+use App\Jobs\SendNewsletter;
+use App\Mail\Newsletter;
 
 Route::view('/','welcome');
 //Route::view('/dashboard','dashboard')->middleware(['auth', 'verified'])->name('dashboard');
@@ -27,6 +30,10 @@ Route::get('/admin', [AdminController::class, 'show'])
 Route::get('/analytics', [ChartController::class, 'show'])
         ->middleware(['auth', 'admin'])
         ->name('analytics');
+
+Route::get('/marketing/newsletter',[NewsletterController::class, 'send']);
+
+Route::view('/marketing','marketing')->name('marketing');
 
 Route::post('/add-details', [FormController::class, 'store']);
 
