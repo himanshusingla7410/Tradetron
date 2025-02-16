@@ -26,7 +26,11 @@ class AppServiceProvider extends ServiceProvider
         Model::preventLazyLoading();
 
         RateLimiter::for('jobs', function ($jobs){
-            return Limit::perMinute(5);
+            return Limit::perSecond(10); // Limiting execution of 10 jobs per second 
+        });
+
+        RateLimiter::for('newsletter', function (Request $request){
+            return Limit::perHour(1); // Limiting 1 request per hour
         });
     }
 }

@@ -31,7 +31,7 @@ Route::get('/analytics', [ChartController::class, 'show'])
         ->middleware(['auth', 'admin'])
         ->name('analytics');
 
-Route::get('/marketing/newsletter',[NewsletterController::class, 'send']);
+Route::get('/marketing/newsletter',[NewsletterController::class, 'send'])->middleware(['throttle:newsletter']);
 
 Route::view('/marketing','marketing')->name('marketing');
 
