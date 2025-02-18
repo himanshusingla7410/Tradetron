@@ -19,7 +19,7 @@
             <div class="bg-white rounded-lg border border-gray-200 p-4">
                 <div class="flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Birthday Offers</h2>
-                    <a href="/marketing/birthday" class="send-btn text-gray-500 hover:text-gray-900 font-medium">Send</a>
+                    <a href="#" class="send-btn text-gray-500 hover:text-gray-900 font-medium">Send</a>
                 </div>
             </div>
         </div>
@@ -33,25 +33,6 @@
             </div>
         </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.querySelectorAll(".send-btn").forEach(button => {
-                    button.addEventListener("click", function(event) {
-                        event.preventDefault();
-                        this.innerHTML = "⏳ Sending...";
 
-                        setTimeout(() => {
-                            this.innerHTML = "✅ Sent";
-                            this.style.pointerEvents = "none";
-                            this.style.color = "green";
-                        }, 2000);
-
-                        setTimeout(() => {
-                            window.location.href = this.getAttribute("href");
-                        }, 2500);
-                    });
-                });
-            });
-        </script>
     </body>
 </x-app-layout>

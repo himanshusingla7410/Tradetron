@@ -16,7 +16,7 @@ class NewsletterController extends Controller
             throw new Exception('No record found for subcribers!');
         }
 
-        $chunkSize = 5;
+        $chunkSize = 100;
 
         Subscribers::where('status', 'active')
             ->chunk($chunkSize, function ($subscribers) {
@@ -28,7 +28,7 @@ class NewsletterController extends Controller
 
                 BatchingController::newsletter($jobs);
 
-                return false;
+                //return false;
             });
 
 

@@ -14,10 +14,9 @@ class NewsletterJob implements ShouldQueue
 {
     use Batchable, Queueable;
 
-    public $timeout = 600; // max time a job can run for 10 mins
-    public $failOnTimeout = true;
+    public $timeout = 600; // Max time a job can run for 10 mins
 
-    public $tries = 3; // how many times job should be attempted if encountered error
+    public $tries = 3; // How many times job should be attempted if encountered error
     /**
      * Create a new job instance.
      */
