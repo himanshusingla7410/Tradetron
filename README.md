@@ -1,66 +1,251 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🧑‍💼 Agent Management System (Laravel)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A role-based Agent Management System built using Laravel Breeze, designed for customer support teams to track chat handling, issue resolution, agent performance, and large-scale marketing communication.
 
-## About Laravel
+This project demonstrates real-world Laravel development, backend architecture, performance analytics, background processing, and third-party integrations.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🚀 Project Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The application allows customer support agents to submit chat-related information through a structured form, while administrators can evaluate individual agent performance using dashboards and analytics.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The system focuses on:
 
-## Learning Laravel
+Agent productivity tracking
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Role-based access control
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Scalable background processing
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Clean UI with modern frontend tooling
 
-## Laravel Sponsors
+Integration with external services (APIs, Google Sheets, Email)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+✨ Core Features
+👤 Agent Module
 
-### Premium Partners
+Agents submit a form containing:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Chat link
 
-## Contributing
+Issue type
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Case status (Resolved, Escalated, Unresolved)
 
-## Code of Conduct
+On form submission:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Chat link is automatically stored in Google Sheets
 
-## Security Vulnerabilities
+Agent dashboard includes:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Chat submission form
 
-## License
+Quote of the Day, dynamically fetched from the Zen Quote API
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Agents have restricted access (submission only)
+
+🛡️ Admin Module (Role-Based Access Control)
+
+Admin-only dashboard to evaluate agent performance:
+
+Total chats handled per agent
+
+Daily, weekly, and monthly chat counts
+
+Issue-type analytics
+
+Resolution status breakdown
+
+Visual data representation using Laravel Charts
+
+Secure role-based access using middleware and policies
+
+📧 Escalation Notification System
+
+When a chat is marked as Escalated:
+
+An automated email notification is sent to the relevant agent
+
+Helps agents track and follow up on escalated cases
+
+Email testing handled using Mailtrap
+
+📢 Marketing & Newsletter Module
+
+Dedicated Marketing tab for sending newsletters
+
+Designed to handle up to 500,000 subscribers
+
+Implemented using:
+
+Laravel Queues
+
+Jobs
+
+Batch Processing
+
+Route-level Rate Limiting applied to prevent abuse and ensure stability
+
+👨‍💻 Laravel Developer Skills Demonstrated
+
+This project is intentionally structured to showcase production-level Laravel skills expected from a professional Laravel Developer.
+
+🔐 Authentication & Authorization
+
+Authentication implemented using Laravel Breeze
+
+Role-Based Access Control (RBAC):
+
+Admin → analytics & management access
+
+Agent → form submission only
+
+Middleware-protected routes
+
+🧩 Backend Architecture & Best Practices
+
+MVC architecture following Laravel standards
+
+RESTful controllers
+
+Clean separation of concerns
+
+Server-side form validation
+
+Business logic driven by real workflows
+
+🗄️ Database & Eloquent ORM
+
+MySQL database integration
+
+Eloquent ORM relationships (Agents → Chat Records)
+
+Optimized queries for:
+
+Performance metrics
+
+Time-based analytics (daily / monthly)
+
+📊 Analytics & Data Visualization
+
+Integrated Laravel Charts for:
+
+Agent performance tracking
+
+Chat status analytics
+
+Issue-type distribution
+
+Dashboard-style reporting for admins
+
+⚙️ Queues, Jobs & Scalability
+
+Background job processing using Laravel Queues
+
+Batch jobs for large-scale newsletter delivery
+
+Designed for high-volume operations (500k+ users)
+
+Route-level rate limiting for performance and security
+
+📧 Email & Event-Driven Communication
+
+Event-based email triggers on escalation
+
+Integrated Mailtrap for safe testing
+
+Asynchronous email dispatch using queues
+
+🔗 Third-Party Integrations
+
+Google Sheets API – storing chat links externally
+
+Zen Quote API – dynamic dashboard content
+
+External API error handling and integration logic
+
+🎨 Frontend & UI
+
+Vite for fast asset bundling
+
+Tailwind CSS for responsive design
+
+JavaScript for interactivity
+
+Blade templates for reusable UI components
+
+🔒 Security & Performance
+
+Server-side validation
+
+Role-based route protection
+
+Rate limiting on sensitive endpoints
+
+Queue-based processing to reduce request load
+
+🛠️ Tech Stack
+Backend
+
+Laravel (Laravel Breeze Starter Kit)
+
+PHP
+
+MySQL
+
+Laravel Queues, Jobs & Batching
+
+Mailtrap (Email testing)
+
+Frontend
+
+Vite
+
+Tailwind CSS
+
+JavaScript
+
+Blade Templates
+
+APIs & Integrations
+
+Zen Quote API
+
+Google Sheets API
+
+Visualization
+
+Laravel Charts
+
+✅ Skills Snapshot (For Recruiters)
+
+Laravel • PHP • MySQL • MVC • Eloquent ORM • Authentication • RBAC • Queues & Jobs • Batching • APIs • Email Notifications • Rate Limiting • Google Sheets Integration • Tailwind CSS • Vite • JavaScript • Data Analytics
+
+🎯 Why This Project Matters
+
+This project reflects real-world Laravel development scenarios, including:
+
+Multi-role systems
+
+Performance analytics
+
+Scalable background processing
+
+Clean architecture
+
+Business-driven features
+
+It is suitable as a portfolio project for Laravel Backend / Full Stack Developer roles.
+
+📌 Future Enhancements
+
+Export reports (CSV / PDF)
+
+Real-time analytics
+
+Advanced filtering & date ranges
+
+Webhook / Slack integration
+
+📄 License
+
+This project is intended for learning, demonstration, and portfolio purposes.
