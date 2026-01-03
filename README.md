@@ -1,251 +1,221 @@
-🧑‍💼 Agent Management System (Laravel)
-
-A role-based Agent Management System built using Laravel Breeze, designed for customer support teams to track chat handling, issue resolution, agent performance, and large-scale marketing communication.
-
-This project demonstrates real-world Laravel development, backend architecture, performance analytics, background processing, and third-party integrations.
-
-🚀 Project Overview
-
-The application allows customer support agents to submit chat-related information through a structured form, while administrators can evaluate individual agent performance using dashboards and analytics.
-
-The system focuses on:
-
-Agent productivity tracking
-
-Role-based access control
-
-Scalable background processing
-
-Clean UI with modern frontend tooling
-
-Integration with external services (APIs, Google Sheets, Email)
-
-✨ Core Features
-👤 Agent Module
-
-Agents submit a form containing:
-
-Chat link
-
-Issue type
-
-Case status (Resolved, Escalated, Unresolved)
-
-On form submission:
-
-Chat link is automatically stored in Google Sheets
-
-Agent dashboard includes:
-
-Chat submission form
-
-Quote of the Day, dynamically fetched from the Zen Quote API
-
-Agents have restricted access (submission only)
-
-🛡️ Admin Module (Role-Based Access Control)
-
-Admin-only dashboard to evaluate agent performance:
-
-Total chats handled per agent
-
-Daily, weekly, and monthly chat counts
-
-Issue-type analytics
-
-Resolution status breakdown
-
-Visual data representation using Laravel Charts
-
-Secure role-based access using middleware and policies
-
-📧 Escalation Notification System
-
-When a chat is marked as Escalated:
-
-An automated email notification is sent to the relevant agent
-
-Helps agents track and follow up on escalated cases
-
-Email testing handled using Mailtrap
-
-📢 Marketing & Newsletter Module
-
-Dedicated Marketing tab for sending newsletters
-
-Designed to handle up to 500,000 subscribers
-
-Implemented using:
-
-Laravel Queues
-
-Jobs
-
-Batch Processing
-
-Route-level Rate Limiting applied to prevent abuse and ensure stability
-
-👨‍💻 Laravel Developer Skills Demonstrated
-
-This project is intentionally structured to showcase production-level Laravel skills expected from a professional Laravel Developer.
-
-🔐 Authentication & Authorization
-
-Authentication implemented using Laravel Breeze
-
-Role-Based Access Control (RBAC):
-
-Admin → analytics & management access
-
-Agent → form submission only
-
-Middleware-protected routes
-
-🧩 Backend Architecture & Best Practices
-
-MVC architecture following Laravel standards
-
-RESTful controllers
-
-Clean separation of concerns
-
-Server-side form validation
-
-Business logic driven by real workflows
-
-🗄️ Database & Eloquent ORM
-
-MySQL database integration
-
-Eloquent ORM relationships (Agents → Chat Records)
-
-Optimized queries for:
-
-Performance metrics
-
-Time-based analytics (daily / monthly)
-
-📊 Analytics & Data Visualization
-
-Integrated Laravel Charts for:
-
-Agent performance tracking
-
-Chat status analytics
-
-Issue-type distribution
-
-Dashboard-style reporting for admins
-
-⚙️ Queues, Jobs & Scalability
-
-Background job processing using Laravel Queues
-
-Batch jobs for large-scale newsletter delivery
-
-Designed for high-volume operations (500k+ users)
-
-Route-level rate limiting for performance and security
-
-📧 Email & Event-Driven Communication
-
-Event-based email triggers on escalation
-
-Integrated Mailtrap for safe testing
-
-Asynchronous email dispatch using queues
-
-🔗 Third-Party Integrations
-
-Google Sheets API – storing chat links externally
-
-Zen Quote API – dynamic dashboard content
-
-External API error handling and integration logic
-
-🎨 Frontend & UI
-
-Vite for fast asset bundling
-
-Tailwind CSS for responsive design
-
-JavaScript for interactivity
-
-Blade templates for reusable UI components
-
-🔒 Security & Performance
-
-Server-side validation
-
-Role-based route protection
-
-Rate limiting on sensitive endpoints
-
-Queue-based processing to reduce request load
-
-🛠️ Tech Stack
-Backend
-
-Laravel (Laravel Breeze Starter Kit)
-
-PHP
-
-MySQL
-
-Laravel Queues, Jobs & Batching
-
-Mailtrap (Email testing)
-
-Frontend
-
-Vite
-
-Tailwind CSS
-
-JavaScript
-
-Blade Templates
-
-APIs & Integrations
-
-Zen Quote API
-
-Google Sheets API
-
-Visualization
-
-Laravel Charts
-
-✅ Skills Snapshot (For Recruiters)
-
+<h1>🧑‍💼 Agent Management System (Laravel)</h1>
+
+<p>
+A <strong>role-based Agent Management System</strong> built using <strong>Laravel Breeze</strong>, designed for customer support teams to track chat handling, issue resolution, agent performance, and large-scale marketing communication.
+</p>
+
+<p>
+This project demonstrates <strong>real-world Laravel development</strong>, backend architecture, performance analytics, background processing, and third-party integrations.
+</p>
+
+<hr>
+
+<h2>🚀 Project Overview</h2>
+
+<p>
+The application allows <strong>customer support agents</strong> to submit chat-related information through a structured form, while <strong>administrators</strong> can evaluate individual agent performance using dashboards and analytics.
+</p>
+
+<ul>
+  <li>Agent productivity tracking</li>
+  <li>Role-based access control</li>
+  <li>Scalable background processing</li>
+  <li>Modern frontend tooling</li>
+  <li>Third-party API integrations</li>
+</ul>
+
+<hr>
+
+<h2>✨ Core Features</h2>
+
+<h3>👤 Agent Module</h3>
+<ul>
+  <li>Agents submit a form containing:</li>
+  <ul>
+    <li>Chat link</li>
+    <li>Issue type</li>
+    <li>Case status (Resolved, Escalated, Unresolved)</li>
+  </ul>
+  <li>On submission, chat links are stored in <strong>Google Sheets</strong></li>
+  <li>Agent dashboard displays:</li>
+  <ul>
+    <li>Chat submission form</li>
+    <li><strong>Quote of the Day</strong> fetched from the <strong>Zen Quote API</strong></li>
+  </ul>
+  <li>Agents have restricted access (form submission only)</li>
+</ul>
+
+<hr>
+
+<h3>🛡️ Admin Module (Role-Based Access Control)</h3>
+<ul>
+  <li>Admin-only dashboard to evaluate agent performance</li>
+  <li>Metrics include:</li>
+  <ul>
+    <li>Total chats handled per agent</li>
+    <li>Daily, weekly, and monthly chat counts</li>
+    <li>Issue-type analytics</li>
+    <li>Resolution status breakdown</li>
+  </ul>
+  <li>Visual data representation using <strong>Laravel Charts</strong></li>
+  <li>Secure role-based access using middleware</li>
+</ul>
+
+<hr>
+
+<h3>📧 Escalation Notification System</h3>
+<ul>
+  <li>When a chat is marked as <strong>Escalated</strong>:</li>
+  <ul>
+    <li>Automated email notification is sent to the relevant agent</li>
+    <li>Helps track and follow up on escalated cases</li>
+  </ul>
+  <li>Email testing handled using <strong>Mailtrap</strong></li>
+</ul>
+
+<hr>
+
+<h3>📢 Marketing & Newsletter Module</h3>
+<ul>
+  <li>Dedicated Marketing tab for newsletter campaigns</li>
+  <li>Supports up to <strong>500,000 subscribers</strong></li>
+  <li>Implemented using:</li>
+  <ul>
+    <li>Laravel Queues</li>
+    <li>Jobs</li>
+    <li>Batch Processing</li>
+  </ul>
+  <li>Route-level <strong>Rate Limiting</strong> for safety and performance</li>
+</ul>
+
+<hr>
+
+<h2>👨‍💻 Laravel Developer Skills Demonstrated</h2>
+
+<h3>🔐 Authentication & Authorization</h3>
+<ul>
+  <li>Authentication using <strong>Laravel Breeze</strong></li>
+  <li>Role-Based Access Control (RBAC)</li>
+  <li>Middleware-protected routes</li>
+</ul>
+
+<h3>🧩 Backend Architecture & Best Practices</h3>
+<ul>
+  <li>MVC architecture following Laravel standards</li>
+  <li>RESTful controller design</li>
+  <li>Clean separation of concerns</li>
+  <li>Server-side form validation</li>
+</ul>
+
+<h3>🗄️ Database & Eloquent ORM</h3>
+<ul>
+  <li>MySQL database integration</li>
+  <li>Eloquent ORM relationships</li>
+  <li>Optimized queries for analytics and reports</li>
+</ul>
+
+<h3>📊 Analytics & Data Visualization</h3>
+<ul>
+  <li>Integrated <strong>Laravel Charts</strong></li>
+  <li>Performance dashboards for admins</li>
+  <li>Issue-type and resolution analytics</li>
+</ul>
+
+<h3>⚙️ Queues, Jobs & Scalability</h3>
+<ul>
+  <li>Background job processing using Laravel Queues</li>
+  <li>Batch jobs for high-volume newsletter delivery</li>
+  <li>Designed for scalable operations</li>
+</ul>
+
+<h3>📧 Email & Event-Based Communication</h3>
+<ul>
+  <li>Email notifications triggered by business events</li>
+  <li>Asynchronous email dispatch using queues</li>
+  <li>Mailtrap integration for testing</li>
+</ul>
+
+<h3>🔗 Third-Party API Integrations</h3>
+<ul>
+  <li>Google Sheets API</li>
+  <li>Zen Quote API</li>
+  <li>External API handling with error management</li>
+</ul>
+
+<h3>🎨 Frontend & UI</h3>
+<ul>
+  <li>Vite for asset bundling</li>
+  <li>Tailwind CSS for responsive UI</li>
+  <li>JavaScript for client-side interactions</li>
+  <li>Blade templates for reusable views</li>
+</ul>
+
+<h3>🔒 Security & Performance</h3>
+<ul>
+  <li>Role-based route protection</li>
+  <li>Server-side validation</li>
+  <li>Rate limiting on sensitive endpoints</li>
+  <li>Queue-based processing to reduce server load</li>
+</ul>
+
+<hr>
+
+<h2>🛠️ Tech Stack</h2>
+
+<h3>Backend</h3>
+<ul>
+  <li>Laravel (Laravel Breeze Starter Kit)</li>
+  <li>PHP</li>
+  <li>MySQL</li>
+  <li>Queues, Jobs & Batching</li>
+  <li>Mailtrap (Email Testing)</li>
+</ul>
+
+<h3>Frontend</h3>
+<ul>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+  <li>JavaScript</li>
+  <li>Blade Templates</li>
+</ul>
+
+<h3>APIs & Integrations</h3>
+<ul>
+  <li>Zen Quote API</li>
+  <li>Google Sheets API</li>
+</ul>
+
+<h3>Visualization</h3>
+<ul>
+  <li>Laravel Charts</li>
+</ul>
+
+<hr>
+
+<h2>✅ Skills Snapshot (For Recruiters)</h2>
+
+<p>
+<strong>
 Laravel • PHP • MySQL • MVC • Eloquent ORM • Authentication • RBAC • Queues & Jobs • Batching • APIs • Email Notifications • Rate Limiting • Google Sheets Integration • Tailwind CSS • Vite • JavaScript • Data Analytics
+</strong>
+</p>
 
-🎯 Why This Project Matters
+<hr>
 
-This project reflects real-world Laravel development scenarios, including:
+<h2>🎯 Why This Project Matters</h2>
 
-Multi-role systems
+<p>
+This project reflects <strong>real-world Laravel development scenarios</strong> including multi-role systems, performance analytics, scalable background processing, and clean architectural practices.
+</p>
 
-Performance analytics
+<p>
+Suitable for <strong>Laravel Backend</strong> and <strong>Full Stack Developer</strong> roles.
+</p>
 
-Scalable background processing
+<hr>
 
-Clean architecture
+<h2>📄 License</h2>
 
-Business-driven features
-
-It is suitable as a portfolio project for Laravel Backend / Full Stack Developer roles.
-
-📌 Future Enhancements
-
-Export reports (CSV / PDF)
-
-Real-time analytics
-
-Advanced filtering & date ranges
-
-Webhook / Slack integration
-
-📄 License
-
+<p>
 This project is intended for learning, demonstration, and portfolio purposes.
+</p>
